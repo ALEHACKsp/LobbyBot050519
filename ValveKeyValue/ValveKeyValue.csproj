@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Product>Valve KeyValue Library</Product>
+    <Description>Library to parse and write Valve KeyValue formats</Description>
+    <Copyright>Copyright © SteamDatabase 2017</Copyright>
+    <Company>SteamDatabase</Company>
+    <Authors>SteamDatabase</Authors>
+    <RepositoryUrl>https://github.com/SteamDatabase/ValveKeyValue</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/SteamDatabase/ValveKeyValue</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <Version Condition="'$(APPVEYOR_BUILD_VERSION)' != ''">$(APPVEYOR_BUILD_VERSION)</Version>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Be.IO" Version="1.0.0" />
+  </ItemGroup>
+</Project>

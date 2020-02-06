@@ -1,15 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using CSGO_Lobby.Other;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace CSGO_Lobby
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        private static Logger Logger;
+        
+        public static void Main()
         {
+            Logger = new Logger("Program");
+            Logger.Log("Initializing...");
+
+            Logger.Log("Loading accounts...");
+            Accounts.Load();
+
+            Logger.Log("Initializing bots...");
+            Bots.Start(8);
+
+            Logger.Log("Running...");
+            LobbyBot.Run();
         }
     }
 }
